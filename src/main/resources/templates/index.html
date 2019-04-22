@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-    <title>Електронна бібліотека</title>
+    <title>Electronic library</title>
 
     <!-- CSS  -->
     <link href="/css/material_icons.css" rel="stylesheet">
@@ -17,19 +17,19 @@
     <img style="position:absolute; left:130px;" width="65px" height="65px" class="brand-logo"
          src="/images/logo.png">
     <div style="position:relative;" class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">
-        <div>Електронна бібліотека</div>
+        <div>Electronic library</div>
     </a>
         <ul class="right hide-on-med-and-down">
-            <li><a href="#" data-activates="slide-out" style="display: block" class="button-collapse">Сортування</a>
+            <li><a href="#" data-activates="slide-out" style="display: block" class="button-collapse">Sorting</a>
             </li>
             <ul id='dropdown1' class='dropdown-content'>
-                <li><a sec:authorize="hasAuthority('ADMIN')" href="/admin/debtors">Переглянути боржників</a></li>
-                <li><a sec:authorize="hasAuthority('ADMIN')" href="/admin/viewBids">Переглянути замовлення</a></li>
-                <li><a sec:authorize="hasAuthority('ADMIN')" href="/admin/addBook">Додати нову книгу</a></li>
+                <li><a sec:authorize="hasAuthority('ADMIN')" href="/admin/debtors">View debtors</a></li>
+                <li><a sec:authorize="hasAuthority('ADMIN')" href="/admin/viewBids">View order</a></li>
+                <li><a sec:authorize="hasAuthority('ADMIN')" href="/admin/addBook">Add a new book</a></li>
             </ul>
-            <li><a sec:authorize="hasAuthority('ADMIN')" class='dropdown-button' href='#' data-activates='dropdown1'>Адміністратор</a></li>
-            <li><a sec:authorize="!isAuthenticated()" href="/login">Увійти</a></li>
-            <li><a sec:authorize="isAuthenticated()" href="/logout">Вийти</a></li>
+            <li><a sec:authorize="hasAuthority('ADMIN')" class='dropdown-button' href='#' data-activates='dropdown1'>Administrator</a></li>
+            <li><a sec:authorize="!isAuthenticated()" href="/login">Administrator</a></li>
+            <li><a sec:authorize="isAuthenticated()" href="/logout">Logout</a></li>
             <i class="material-icons">input</i>
         </ul>
         <ul id="nav-mobile" class="side-nav">
@@ -50,15 +50,15 @@
                 <a href="javascript:"><span class="white-text email" th:text="${email}"></span></a>
             </div>
         </li>
-        <li><h6>Сортувати за назвою</h6></li>
-        <li><a href="/?name=K&sort=bookName,asc" class="waves-effect">За зростанням</a></li>
-        <li><a href="/?name=K&sort=bookName,desc" class="waves-effect">За спаданням</a></li>
-        <li><h6>Сортувати за автором</h6></li>
-        <li><a href="/?name=K&sort=authors,asc" class="waves-effect">За зростанням</a></li>
-        <li><a href="/?name=K&sort=authors,desc" class="waves-effect">За спаданням</a></li>
-        <li><h6>Сортувати за УДК</h6></li>
-        <li><a href="/?name=K&sort=udkCategory,asc" class="waves-effect">За зростанням</a></li>
-        <li><a href="/?name=K&sort=udkCategory,desc" class="waves-effect">За спаданням</a></li>
+        <li><h6>Sort by name</h6></li>
+        <li><a href="/?name=K&sort=bookName,asc" class="waves-effect">Ascending</a></li>
+        <li><a href="/?name=K&sort=bookName,desc" class="waves-effect">Descending</a></li>
+        <li><h6>Sort by author</h6></li>
+        <li><a href="/?name=K&sort=authors,asc" class="waves-effect">Ascending</a></li>
+        <li><a href="/?name=K&sort=authors,desc" class="waves-effect">Descending</a></li>
+        <li><h6>Sort by UDC</h6></li>
+        <li><a href="/?name=K&sort=udkCategory,asc" class="waves-effect">Ascending</a></li>
+        <li><a href="/?name=K&sort=udkCategory,desc" class="waves-effect">Descending</a></li>
     </ul>
     <br/>
     <div class="container">
@@ -66,7 +66,7 @@
         <!-- Modal Structure -->
         <div id="modal1" class="modal">
             <div class="modal-content">
-                <h4>Екземпляри книги</h4>
+                <h4>Copy books</h4>
                 <!--<p>A bunch of text</p>-->
                 <form action="/admin/addBookCard" method="get" class="col s6">
                     <input type="hidden" name="bookId" id="modalBookId">
@@ -77,10 +77,10 @@
                                 <i class="tiny material-icons">mode_edit</i></a>
                         </div>
                         <div class="input-field col s12">
-                            <input name="cardId" placeholder="Номер книги" type="text" class="validate">
+                            <input name="cardId" placeholder="Book number" type="text" class="validate">
                         </div>
                         <div class="input-field col s12">
-                            <button class="btn waves-effect waves-light" type="submit" name="action">Додати екземппляр
+                            <button class="btn waves-effect waves-light" type="submit" name="action">Add an instance
                             </button>
                         </div>
                     </div>
@@ -92,9 +92,9 @@
         </div>
 
         <br><br>
-        <h1 class="header center" th:text="${'Вітаємо у бібліотеці, ' + username}">Вітаємо у бібліотеці</h1>
+        <h1 class="header center" th:text="${'Вітаємо у бібліотеці, ' + username}">Welcome to the library</h1>
         <div class="row center">
-            <h5 class="header col s12 light">Наша система допоможе вам вибрати для себе гарну книгу!</h5>
+            <h5 class="header col s12 light">Our system will help you choose a good book for you!</h5>
         </div>
         <br><br>
 
@@ -105,8 +105,8 @@
                         <input name="search" placeholder="Назва" type="text" class="validate">
                     </div>
                     <div class="input-field col s6">
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Пошук за назвою
-                            <i class="material-icons right">Пошук за назвою</i>
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Search by name
+                            <i class="material-icons right">Search by title</i>
                         </button>
                     </div>
                 </div>
@@ -117,8 +117,8 @@
                         <input name="authorSearch" placeholder="Автор" type="text" class="validate">
                     </div>
                     <div class="input-field col s6">
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Пошук за автором
-                            <i class="material-icons right">Пошук за автором</i>
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Search by author
+                            <i class="material-icons right">Search by author</i>
                         </button>
                     </div>
                 </div>
@@ -165,39 +165,39 @@
                       th:text="${book.bookName}"><i
                         class="material-icons right">close</i></span>
                     <div>
-                        <span class="materialize-red-text">Авторы:</span>
+                        <span class="materialize-red-text">The authors:</span>
                         <th:block th:each="author,authorStat : ${book.authors}">
                             <p th:text="${author.name} + ' ' + ${author.lastName} + ' ' + ${author.middleName}"></p>
                         </th:block>
                     </div>
                     <p>
-                        <span class="materialize-red-text">Издатель:</span>
+                        <span class="materialize-red-text">Publisher:</span>
                         <span th:text="${book.publisher}"></span>
                     </p>
                     <p>
-                        <span class="materialize-red-text">УДК:</span>
-                        <span th:text="${book.udkCategory.id} + ' ' + ${book.udkCategory.categoryName}">4: Прочее</span>
+                        <span class="materialize-red-text">UDC:</span>
+                        <span th:text="${book.udkCategory.id} + ' ' + ${book.udkCategory.categoryName}">4: Other</span>
                     </p>
                     <p>
-                        <span class="materialize-red-text">Год издательства:</span>
+                        <span class="materialize-red-text">Year of publishing:</span>
                         <span th:text="${book.publishYear}"></span>
                     </p>
                     <p>
-                        <span class="materialize-red-text">Количество страниц:</span>
+                        <span class="materialize-red-text">Number of pages:</span>
                         <span th:text="${book.pagesCount}"></span>
                     </p>
                     <p>
-                        <span class="materialize-red-text">Издание:</span>
+                        <span class="materialize-red-text">Edition:</span>
                         <span th:text="${book.publication}"></span>
                     </p>
                     <p>
-                        <span class="materialize-red-text">В наличии:</span>
+                        <span class="materialize-red-text">In stock:</span>
                         <th:block th:each="bookCard,bookCardStat : ${book.bookCards}">
                             <span th:text="${bookCard.id} + ', '"></span>
                         </th:block>
                     </p>
 
-                    <p><span class="materialize-red-text">Описание:</span>
+                    <p><span class="materialize-red-text">Description:</span>
                         <span th:text="${book.description}"></span></p>
                 </div>
             </div>
