@@ -20,7 +20,7 @@
             <input th:field="*{bookId}" type="hidden">
             <div class="row">
                 <div class="input-field col s12">
-                    <input th:field="*{bookName}" placeholder="Назва книги" id="first_name" type="text"
+                    <input th:field="*{bookName}" placeholder="Title of the book" id="first_name" type="text"
                            class="validate">
                     <label for="first_name">Title of the book</label>
                 </div>
@@ -28,7 +28,7 @@
             <div id="authors_block">
                 <div class=" author row" th:id="'author' + ${authorStatus.index}" th:each="author,authorStatus : ${book.authors}">
                     <div class="input-field col s4">
-                        <input th:value="${author.name}" th:name="'authors[' + ${authorStatus.index} + '].name'" placeholder="Ім'я" id="first_name" type="text"
+                        <input th:value="${author.name}" th:name="'authors[' + ${authorStatus.index} + '].name'" placeholder="Name" id="first_name" type="text"
                                class="validate">
                         <label for="first_name">Author</label>
                     </div>
