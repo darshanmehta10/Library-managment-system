@@ -28,32 +28,32 @@ public class User implements UserDetails{
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_Id")
     private Integer id;
-    @NotEmpty(message = "Email не може бути пустим")
-    @Email(message = "Введіть коректний email")
+    @NotEmpty(message = "Email can not be empty")
+    @Email(message = "Enter the correct email")
     private String username;
-    @NotEmpty(message = "Пароль не може бути пустим")
+    @NotEmpty(message = "Password can not be empty")
     private String password;
-    @NotEmpty(message = "Будь ласка, введіть ім'я")
+    @NotEmpty(message = "Please enter a name")
     @Column(name = "first_name")
     private String firstName;
-    @NotEmpty(message = "Будь ласка, введіть прізвище")
+    @NotEmpty(message = "Please enter a surname")
     @Column(name = "last_name")
     private String lastName;
-    @NotEmpty(message = "Будь ласка, введіть по-батькові")
+    @NotEmpty(message = "Please enter a middle surname")
     @Column(name = "middle_name")
     private String middleName;
-    @NotEmpty(message = "Заповніть будь-ласка адресу")
+    @NotEmpty(message = "Fill in the address")
     private String address;
-    @NotEmpty(message = "Введіть телефон")
+    @NotEmpty(message = "Enter your phone")
     private String phoneNumber;
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "dd-mm-yyyy")
     private Calendar birthday;
-    @NotEmpty(message = "Введіть вашу посаду")
+    @NotEmpty(message = "Enter your position")
     private String position;
-    @NotEmpty(message = "Введіть ваш підрозділ")
+    @NotEmpty(message = "Enter your subdivision")
     private String department;
-    @NotEmpty(message = "Введіть ваші паспортні дані")
+    @NotEmpty(message = "Enter your passport details")
     private String passport;
     private boolean enabled;
     @Enumerated(EnumType.ORDINAL)

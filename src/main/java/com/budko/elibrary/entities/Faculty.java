@@ -15,7 +15,7 @@ public class Faculty {
     @Column(name = "id_faculties")
     private Integer id;
     @Column(name = "faculty_name")
-    @NotEmpty(message = "Введіть ваш факультет")
+    @NotEmpty(message = "Enter your faculty")
     private String name;
 
     public void setId(Integer id) {
