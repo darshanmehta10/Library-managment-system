@@ -25,14 +25,14 @@
                     <input th:type="hidden" name="bidId" th:value="${bid.id}">
                     <div class="input-field">
                         <select name="cardId">
-                            <option value="" disabled selected>Choose your option</option>
+                            <option value="" disabled selected>Choose from available books</option>
                             <th:block th:each="bookCard,cardStat : ${bid.book.bookCards}">
                                 <option th:value="${bookCard.id}" th:text="${bookCard.id}">Option 1</option>
                             </th:block>
                         </select>
-                        <label>Select the instance code</label>
+                        <label>Select the book code</label>
                     </div>
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Publish a book
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Issue this book
                         <i class="material-icons right">send</i>
                     </button>
                     <a th:href="@{'/admin/removeBid?bidId=' + ${bid.id}}" class="offset-s2 btn-floating indigo darken-2">
