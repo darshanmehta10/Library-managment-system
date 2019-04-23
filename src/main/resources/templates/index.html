@@ -91,13 +91,11 @@
             </div>
         </div>
 
-        <br><br>
-        <h1 class="header center" th:text="${'Welcome to the library, ' + username}">Welcome to the library</h1>
+        <h3 class="header center" th:text="${'Welcome to the library, ' + username}">Welcome to the library</h3>
         <div class="row center">
             <h5 class="header col s12 light">Our system will help you choose a good book for you!</h5>
         </div>
-        <br><br>
-
+        
         <div class="row">
             <form action="/" method="get" class="col s6">
                 <div class="row">
@@ -105,7 +103,7 @@
                         <input name="search" placeholder="Name" type="text" class="validate">
                     </div>
                     <div class="input-field col s6">
-                        <button class="btn waves-effect waves-light" type="submit" name="action" style="width: 100%;">Search by name
+                        <button class="btn waves-effect waves-light" type="submit" name="action" style="width: 225px;">Search by name
                             <i class="material-icons right">Search by title</i>
                         </button>
                     </div>
@@ -117,7 +115,7 @@
                         <input name="authorSearch" placeholder="Author" type="text" class="validate">
                     </div>
                     <div class="input-field col s6">
-                        <button class="btn waves-effect waves-light" type="submit" name="action" style="width: 100%;">Search by author
+                        <button class="btn waves-effect waves-light" type="submit" name="action" style="width: 225px;">Search by author
                             <i class="material-icons right">Search by author</i>
                         </button>
                     </div>
