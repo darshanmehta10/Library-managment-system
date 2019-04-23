@@ -2,7 +2,11 @@ package com.msu.elibrary.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.util.Calendar;
+
 import javax.persistence.*;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * @author VPatel
@@ -21,6 +25,9 @@ public class BookCard {
     @JoinColumn(name = "Viewer_id")
     @JsonIgnore
     private User user;
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
+    private Calendar issueDate;
 
     public Integer getId() {
         return id;
@@ -45,7 +52,14 @@ public class BookCard {
     public void setUser(User user) {
         this.user = user;
     }
+    
+    public Calendar getIssueDate() {
+		return issueDate;
+	}
 
+	public void setIssueDate(Calendar issueDate) {
+		this.issueDate = issueDate;
+	}
 
     @Override
     public String toString() {

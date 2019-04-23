@@ -2,6 +2,7 @@ package com.msu.elibrary.controllers.admin;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Set;
 
@@ -54,7 +55,7 @@ public class AdminController {
     @RequestMapping(value = "removeDebtor")
     public String removeDebtor(@RequestParam(value = "cardId") Integer cardId) {
         bookCardService.removeDebtor(cardId);
-        return "debtors";
+        return "redirect:/admin/debtors";
     }
 
     @RequestMapping(value = "debtors")
@@ -81,6 +82,7 @@ public class AdminController {
         User user = userService.getUserById(userId);
         BookCard bookCard = bookCardService.getBookCard(cardId);
         bookCard.setUser(user);
+        bookCard.setIssueDate(Calendar.getInstance());
         bookCardService.saveBookCard(bookCard);
         bidService.removeBid(bidId);
         return "redirect:/admin/viewBids";

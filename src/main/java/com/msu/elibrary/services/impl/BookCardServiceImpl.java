@@ -59,6 +59,7 @@ public class BookCardServiceImpl implements BookCardService {
     public void removeDebtor(Integer cardId) {
         BookCard bookCard = bookCardRepository.findOne(cardId);
         bookCard.setUser(null);
+        bookCard.setIssueDate(null);
         bookCardRepository.saveAndFlush(bookCard);
     }
 }
