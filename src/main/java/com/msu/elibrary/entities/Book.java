@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 import com.msu.elibrary.controllers.dto.BookDTO;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -40,7 +41,7 @@ public class Book {
     @JoinColumn(name = "UDK_Number")
     private UDKCategory udkCategory;
     @OneToMany(mappedBy = "book",fetch = FetchType.LAZY,orphanRemoval = true)
-    private Set<BookCard> bookCards;
+    private Set<BookCard> bookCards = new HashSet<>();
     @OneToOne(fetch = FetchType.LAZY,orphanRemoval = true)
     @JoinColumn(name = "book_id")
     private Bid bid;
@@ -146,7 +147,10 @@ public class Book {
     }
 
     public void setBookCards(Set<BookCard> bookCards) {
-        this.bookCards = bookCards;
+    		this.bookCards.clear();
+    		if(bookCards != null) {
+    			this.bookCards.addAll(bookCards);
+    		}
     }
 
     public String getDescription() {
